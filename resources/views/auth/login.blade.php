@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('content')
+<style>
+.form-control {
+    line-height: 2.33 !important;
+    padding: 0.38rem .875rem;
+}
+</style>
     <div class="authentication-wrapper authentication-cover">
         <div class="authentication-inner row m-0">
             <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
