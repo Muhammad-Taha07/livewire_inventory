@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Livewire\Dashboard;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,15 @@ use App\Livewire\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/', 'viewLogin')->name('login-page');
+    Route::post('/login', 'login')->name('login');
 });
+// Auth::routes();
 
-Auth::routes();
 
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', Dashboard::class)->name('dashboard');

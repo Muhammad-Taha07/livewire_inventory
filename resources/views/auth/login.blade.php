@@ -4,7 +4,7 @@
         <div class="authentication-inner row m-0">
             <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
                 <div class="w-100 d-flex justify-content-center">
-                    <img src="../../assets/img/illustrations/boy-with-rocket-light.png" class="img-fluid" alt="Login image"
+                    <img src="{{ asset('assets/img/illustrations/boy-with-rocket-light.png') }}" class="img-fluid" alt="Login image"
                         width="700">
                 </div>
             </div>
@@ -17,7 +17,7 @@
                         <a href="index.html" class="app-brand-link gap-2">
                             <span class="app-brand-logo demo">
 
-                                <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                {{-- <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <defs>
                                         <path
@@ -60,14 +60,14 @@
                                             </g>
                                         </g>
                                     </g>
-                                </svg>
+                                </svg> --}}
 
                             </span>
-                            <span class="app-brand-text demo text-body fw-bold">Sneat</span>
+                            {{-- <span class="app-brand-text demo text-body fw-bold">Inventory Management</span> --}}
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2">Welcome 👋</h4>
+                    <h4 class="mb-2">Login to your Account 👋</h4>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -93,9 +93,9 @@
                         <div class="mb-3 form-password-toggle">
                             <div class="d-flex justify-content-between">
                                 <label class="form-label" for="password">Password</label>
-                                <a href="{{ route('password.request') }}">
-                                    <small>Forgot Password?</small>
-                                </a>
+                                <small>Forgot Password?</small>
+                                {{-- <a href="{{ route('password.request') }}">
+                                </a> --}}
                             </div>
                             <div class="input-group input-group-merge">
                                 <input
@@ -123,8 +123,6 @@
                 </div>
             </div>
             <!-- /Login -->
-
-
         </div>
     </div>
 @endsection
